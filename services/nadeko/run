@@ -1,3 +1,4 @@
 #!/bin/bash
 umask 0002
-mono /root/NadekoBot/NadekoBot.exe
+cd /root/NadekoBot
+mono NadekoBot.exe
