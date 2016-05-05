@@ -1,4 +1,3 @@
 #!/bin/bash
 umask 0002
-cd /root/NadekoBot
-XDG_CONFIG_HOME="/config/xdg" exec /sbin/setuser abc mono NadekoBot.exe
+abc mono /root/NadekoBotNadekoBot.exe
