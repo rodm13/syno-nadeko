@@ -16,7 +16,7 @@ docker start nadeko
 
 ## Updates / Monitoring
 
-* Upgrade to the latest version of sonarr simply `docker restart nadeko`.
+* Upgrade to the latest version of Nadeko simply `docker restart nadeko`.
 * Monitor the logs of the container in realtime `docker logs -f nadeko`.
 
 
