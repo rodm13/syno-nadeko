@@ -8,10 +8,8 @@ if test -f "/config/config.json"; then echo "Config Exist"; else cp /root/Nadeko
 
 #Remove Built in
 rm /root/NadekoBot/credentials.json
-rm /root/NadekoBot/data/nadekobot.sqlite
-rm /root/NadekoBot/data/config.json
+
 
 #Adding Config file sym links
 ln -s /config/credentials.json /root/NadekoBot/credentials.json
-ln -s /config/nadekobot.sqlite /root/NadekoBot/data/nadekobot.sqlite
-ln -s /config/config.json /root/NadekoBot/data/config.json
+sudp ln -ds /config/data /root/nadekobot/data 
