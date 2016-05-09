@@ -5,13 +5,17 @@ Nadeko is written in C# and Discord.net for more information visit https://githu
 ## Docker Usage
 
 ```
-docker create --name nadeko -v </path/to/appdata>:/config uirel/nadeko
+docker create --name nadeko -v /<appdata>:/config uirel/nadeko
+```
+Edit the <appdata> path to the location you want to store your credentials.json files. eg /appdata or /nadeko
+
+Edit your credentials.json file per the guide @ https://github.com/Kwoth/NadekoBot then
 ```
 docker start nadeko
-
+```
 **Parameters**
 
-* `-v /config` - database and nadekobot configs, place your existing configs in this folder, or let the docker create blank ones for you and edit per the information @ https://github.com/Kwoth/NadekoBot
+* -v /<appdata>:/config - This is the file location of your persistent information. Your DB and credential information
 
 
 ## Updates / Monitoring
