@@ -12,4 +12,4 @@ rm /root/NadekoBot/credentials.json
 
 #Adding Config file sym links
 ln -s /config/credentials.json /root/NadekoBot/credentials.json
-sudp ln -ds /config/data /root/nadekobot/data 
+sudo ln -ds /config/data /root/nadekobot/data 
