@@ -25,7 +25,7 @@ docker start nadeko
 
 After a few moments you should be able to invite Nadeko to your server. If you cannot check the log file for errors 
 
-'''docker logs nadeko'''
+```docker logs nadeko```
 
 
 **Parameters**
