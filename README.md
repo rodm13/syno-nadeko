@@ -28,10 +28,6 @@ After a few moments you should be able to invite Nadeko to your server. If you c
 ```docker logs nadeko```
 
 
-**Parameters**
-
-* -v /<appdata>:/config - This is the file location of your persistent information. Your DB and credential information
-
 
 ## Updates / Monitoring
 
