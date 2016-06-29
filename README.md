@@ -14,9 +14,9 @@ Lots of text will scroll past as the container is setup. After a few minutes it 
 Press CTRL+C at this point.
 
 Edit your /nadeko/credentials.json file per the guide @ https://github.com/Kwoth/NadekoBot/wiki/Credentials.json-and-data-config.json using a tool of your choice eg nano
-'''
+```
 nano /nadeko/credentials.json
-'''
+```
 Atfer editing the config file we can restart Nadeko
 
 ```
