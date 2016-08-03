@@ -9,7 +9,7 @@ echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /
 # Install Pre Requisites
 RUN add-apt-repository ppa:mc3man/trusty-media -y
 RUN apt-get -q update && \
-apt-get install -qy wget libopus0 opus-tools libopus-dev mono-devel unzip ffmpeg rsync
+apt-get install -qy wget libopus0 opus-tools libopus-dev mono-devel unzip ffmpeg rsync nano
 
 #Mappings and ports
 VOLUME ["/config"]
