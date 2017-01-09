@@ -1,25 +1,20 @@
-FROM linuxserver/baseimage
-MAINTAINER Uirel <uirel@gany.net>
+FROM microsoft/dotnet:sdk
+MAINTAINER Poag <poag@gany.net>
 
-# Setup Mono Repo
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF &&\
-echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-xamarin.list
+WORKDIR /opt/
 
+#Install required software
+RUN echo "deb http://www.deb-multimedia.org jessie main non-free" | tee /etc/apt/sources.list.d/debian-backports.list \
+	&& apt-get update \
+	&& apt-get install -y --force-yes deb-multimedia-keyring \
+	&& apt-get update \
+	&& apt-get install -y git libopus0 opus-tools libopus-dev libsodium-dev ffmpeg
 
-# Install Pre Requisites
-RUN add-apt-repository ppa:mc3man/trusty-media -y
-RUN apt-get -q update && \
-apt-get install -qy wget libopus0 opus-tools libopus-dev mono-devel unzip ffmpeg rsync nano
+#Download and install stable version of Nadeko
+RUN curl -L https://github.com/Kwoth/NadekoBot-BashScript/raw/master/nadeko_installer_latest.sh | sh \
+	&& curl -L https://github.com/Kwoth/NadekoBot-BashScript/raw/master/nadeko_autorestart.sh > nadeko.sh \
+	&& chmod 755 nadeko.sh
 
-#Mappings and ports
-VOLUME ["/config"]
+VOLUME ["/opt"]
 
-#Clean Up
-RUN apt-get autoclean -y; apt-get autoremove -y &&\
-apt-get clean && \
-rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-#Adding Custom files
-ADD init/ /etc/my_init.d/
-ADD services/ /etc/service/
-RUN chmod -v +x /etc/service/*/run /etc/my_init.d/*.sh
+CMD ["/opt/nadeko.sh"]
