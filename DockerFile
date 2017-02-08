@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:sdk
+FROM microsoft/dotnet@93c87ca7d88e
 MAINTAINER Poag <poag@gany.net>
 
 WORKDIR /opt/
