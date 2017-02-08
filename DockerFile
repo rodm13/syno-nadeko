@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:1.0-sdk-msbuild
+FROM microsoft/dotnet:sdk
 MAINTAINER Poag <poag@gany.net>
 
 WORKDIR /opt/
