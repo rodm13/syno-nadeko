@@ -18,7 +18,7 @@ ln -s /root/nadeko/NadekoBot.db /opt/NadekoBot/src/NadekoBot/bin/Release/netcore
 
 mv -n /opt/NadekoBot/src/NadekoBot/credentials.json /root/nadeko/credentials.json
 rm /opt/NadekoBot/src/NadekoBot/credentials.json
-ln -s /root/nadeko/NadekoBot.db /opt/NadekoBot/src/NadekoBot/credentials.json
+ln -s /root/nadeko/credentials.json /opt/NadekoBot/src/NadekoBot/credentials.json
 
 cd NadekoBot/src/NadekoBot
 echo "Running NadekoBot with auto restart Please wait."
