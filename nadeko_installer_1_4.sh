@@ -44,22 +44,7 @@ echo ""
 echo "Building NadekoBot"
 dotnet build --configuration Release
 echo ""
-echo "Building done. Moving Nadeko"
-
-cd "$root"
-
-if [ ! -d NadekoBot ]
-then
-    mv "$tempdir"/NadekoBot NadekoBot
-else
-    cp -RT $root/NadekoBot/src/NadekoBot/bin/Release/netcoreapp1.0/data/NadekoBot.db $root/NadekoBot/src/NadekoBot/bin/Release/netcoreapp1.1/data/NadekoBot.db 1>/dev/null 2>&1
-    mv -f $root/NadekoBot/src/NadekoBot/bin/Release/netcoreapp1.0/data/NadekoBot.db $root/NadekoBot/src/NadekoBot/bin/Release/netcoreapp1.0/data/NadekoBot_old.db 1>/dev/null 2>&1
-    echo ""
-    echo "Database copied to the new version"
-    cp -RT $root/NadekoBot_old/src/NadekoBot/data/ $root/NadekoBot/src/NadekoBot/data/ 1>/dev/null 2>&1
-    echo ""
-    echo "Other data copied to the new version"
-fi
+echo "Building done."
 
 echo ""
 echo "Installation Complete."
