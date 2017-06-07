@@ -24,11 +24,8 @@ else
 fi
 
 root=/opt
-tempdir=NadekoInstall_Temp
 
-rm -r "$tempdir" 1>/dev/null 2>&1
-mkdir "$tempdir"
-cd "$tempdir"
+cd "$root"
 
 echo ""
 echo "Downloading NadekoBot, please wait."
@@ -38,7 +35,7 @@ echo "NadekoBot downloaded."
 
 echo ""
 echo "Downloading Nadeko dependencies"
-cd $root/$tempdir/NadekoBot
+cd $root/NadekoBot
 dotnet restore
 echo ""
 echo "Download done"
@@ -55,13 +52,6 @@ if [ ! -d NadekoBot ]
 then
     mv "$tempdir"/NadekoBot NadekoBot
 else
-    rm -rf NadekoBot_old 1>/dev/null 2>&1
-    mv -fT NadekoBot NadekoBot_old 1>/dev/null 2>&1
-    mv $tempdir/NadekoBot NadekoBot
-    cp -f $root/NadekoBot_old/src/NadekoBot/credentials.json $root/NadekoBot/src/NadekoBot/credentials.json 1>/dev/null 2>&1
-    echo ""
-    echo "credentials.json copied to the new version"
-    cp -RT $root/NadekoBot_old/src/NadekoBot/bin/ $root/NadekoBot/src/NadekoBot/bin/ 1>/dev/null 2>&1
     cp -RT $root/NadekoBot/src/NadekoBot/bin/Release/netcoreapp1.0/data/NadekoBot.db $root/NadekoBot/src/NadekoBot/bin/Release/netcoreapp1.1/data/NadekoBot.db 1>/dev/null 2>&1
     mv -f $root/NadekoBot/src/NadekoBot/bin/Release/netcoreapp1.0/data/NadekoBot.db $root/NadekoBot/src/NadekoBot/bin/Release/netcoreapp1.0/data/NadekoBot_old.db 1>/dev/null 2>&1
     echo ""
@@ -71,7 +61,6 @@ else
     echo "Other data copied to the new version"
 fi
 
-rm -r "$tempdir"
 echo ""
 echo "Installation Complete."
 exit 0
