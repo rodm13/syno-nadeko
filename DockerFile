@@ -12,7 +12,7 @@ RUN echo "deb http://www.deb-multimedia.org jessie main non-free" | tee /etc/apt
 
 #Download and install stable version of Nadeko
 RUN curl -L https://raw.githubusercontent.com/Poag/nadeko/1.4/nadeko_installer_1_4.sh | sh \
-	&& curl -L https://github.com/Kwoth/NadekoBot-BashScript/raw/master/nadeko_autorestart.sh > nadeko.sh \
+	&& curl -L https://raw.githubusercontent.com/Poag/nadeko/1.4/nadeko_autorestart.sh > nadeko.sh \
 	&& chmod 755 nadeko.sh
 
 VOLUME ["/root/nadeko"]
