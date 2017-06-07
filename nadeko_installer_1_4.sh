@@ -47,20 +47,5 @@ echo ""
 echo "Building done."
 
 echo ""
-echo "Linking Nadeko DB"
-
-mkdir /root/nadeko
-mv -n /opt/NadekoBot/src/NadekoBot/bin/Release/netcoreapp1.1/data/NadekoBot.db /root/nadeko/NadekoBot.db
-rm /opt/NadekoBot/src/NadekoBot/bin/Release/netcoreapp1.1/data/NadekoBot.db
-ln -s ln -s /root/nadeko/NadekoBot.db /opt/NadekoBot/src/NadekoBot/bin/Release/netcoreapp1.1/data/NadekoBot.db
-
-echo ""
-echo "Linking Nadeko Credentials"
-
-mv -n /opt/NadekoBot/src/NadekoBot/credentials.json /root/nadeko/credentials.json
-rm /opt/NadekoBot/src/NadekoBot/credentials.json
-ln -s ln -s /root/nadeko/NadekoBot.db /opt/NadekoBot/src/NadekoBot/credentials.json
-
-echo ""
 echo "Installation Complete."
 exit 0
