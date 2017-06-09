@@ -9,13 +9,6 @@ else
 fi
 
 echo ""
-echo "Linking Nadeko DB"
-mkdir -p /root/nadeko
-mv -n /opt/NadekoBot/src/NadekoBot/bin/Release/netcoreapp1.1/data/NadekoBot.db /root/nadeko/NadekoBot.db > /dev/null 2>&1
-rm /opt/NadekoBot/src/NadekoBot/bin/Release/netcoreapp1.1/data/NadekoBot.db > /dev/null 2>&1
-ln -s /root/nadeko/NadekoBot.db /opt/NadekoBot/src/NadekoBot/bin/Release/netcoreapp1.1/data/NadekoBot.db > /dev/null 2>&1
-
-echo ""
 echo "Linking Nadeko Credentials"
 mv -n /opt/NadekoBot/src/NadekoBot/credentials.json /root/nadeko/credentials.json > /dev/null 2>&1
 rm /opt/NadekoBot/src/NadekoBot/credentials.json > /dev/null 2>&1
