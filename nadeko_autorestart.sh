@@ -14,12 +14,12 @@ mv -n /opt/NadekoBot/src/NadekoBot/credentials.json /root/nadeko/credentials.jso
 rm /opt/NadekoBot/src/NadekoBot/credentials.json > /dev/null 2>&1
 ln -s /root/nadeko/credentials.json /opt/NadekoBot/src/NadekoBot/credentials.json > /dev/null 2>&1
 
-echo ""
-echo "Linking Nadeko Data Folder"
-mkdir -p /root/nadeko/data
-rsync --ignore-existing -rt /opt/NadekoBot/src/NadekoBot/bin/Release/netcoreapp1.1/data/ /root/nadeko/data/
-rm -rf /opt/NadekoBot/src/NadekoBot/bin/Release/netcoreapp1.1/data/ > /dev/null 2>&1
-ln -s /root/nadeko/data/ /opt/NadekoBot/src/NadekoBot/bin/Release/netcoreapp1.1/data > /dev/null 2>&1
+#echo ""
+#echo "Linking Nadeko Data Folder"
+#mkdir -p /root/nadeko/data
+#rsync --ignore-existing -rt /opt/NadekoBot/src/NadekoBot/bin/Release/netcoreapp1.1/data/ /root/nadeko/data/
+#rm -rf /opt/NadekoBot/src/NadekoBot/bin/Release/netcoreapp1.1/data/ > /dev/null 2>&1
+#ln -s /root/nadeko/data/ /opt/NadekoBot/src/NadekoBot/bin/Release/netcoreapp1.1/data > /dev/null 2>&1
 
 echo ""
 echo "Running NadekoBot with auto restart Please wait."
